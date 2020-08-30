@@ -10,16 +10,46 @@ import java.util.ArrayList;
 import java.util.List;
 
 class diccionario{
+    
+    //el numero max de palabras que puede haber por diccionario, lo hago variable para alterarlo al agregar o quitar una palabra
+    public static int numespanol = 20;
+    public static int numkaq = 20;
+
+    //espanol, para las palabras en espanol.
+    //kaq, para las palabras en kaqchikel.
+    public static String[] espanol = new String[numespanol];
+    public static String[] kaq = new String[numkaq];
+
+    public static void quitar (String palespanol){
+
+        for(int i=0; i < numespanol; i++){
+
+            if(espanol[i].equals(palespanol)){
+
+                espanol[i] = null;
+
+            }
+
+        }
+
+    }
+
+    public static void agregar (String palespanol, String palkaq){
+
+        //le sumo para hacer dos cosas de una, uno cambiar el valor max de objetos en espanol y kaq y dos para la posicion del objeto
+        numespanol++;
+        numkaq++;
+
+        //agrego las palabras a espanol y a kaq
+        espanol[numespanol] = palespanol;
+        kaq[numkaq] = palkaq;
+
+    }
 
     public String biblioteca (int numero){
 
         //el numero, ay no jodan es para usar array
         int num = numero;
-
-        //espanol, para las palabras en espanol.
-        //kaq, para las palabras en kaqchikel.
-        String[] espanol = new String[20];
-        String[] kaq = new String[20];
 
         String respuesta = null;
 
